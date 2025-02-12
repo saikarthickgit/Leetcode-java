@@ -1,0 +1,15 @@
+class Solution {
+    public String removeOccurrences(String s, String part) {
+        StringBuilder s1 = new StringBuilder(s);
+
+        int m = part.length();
+
+        while (s1.length() >= m) {
+            int index = s1.indexOf(part); // Find occurrence of 'part'
+            if (index == -1) break; // If not found, exit loop
+            s1.delete(index, index + m); // Remove 'part' from string
+        }
+
+        return s1.toString();
+    }
+}
